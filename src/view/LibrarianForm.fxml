@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXBadge?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.validation.RequiredFieldValidator?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="librarianFormContext" prefHeight="997.0" prefWidth="1919.0" style="-fx-background-color: #c4c4c4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LibrarianFormController">
+   <children>
+      <JFXTabPane layoutY="102.0" prefHeight="822.0" prefWidth="1919.0" tabMinHeight="50.0" tabMinWidth="477.0">
+         <tabs>
+            <Tab fx:id="tbMember" style="-fx-background-color: #27ae60;" text="MEMBER">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="730.0" prefWidth="1546.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="680.0" layoutY="24.0" prefHeight="36.0" prefWidth="99.0" text="SEARCH">
+                           <font>
+                              <Font name="System Bold" size="25.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtIdSearch_Member" layoutX="800.0" layoutY="27.0" prefHeight="31.0" prefWidth="407.0" promptText="Membership Id" />
+                        <TextField fx:id="txtNameSearch_Member" layoutX="1207.0" layoutY="27.0" prefHeight="31.0" prefWidth="659.0" promptText="Name" />
+                        <ImageView disable="true" fitHeight="17.0" fitWidth="19.0" layoutX="1263.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/pngfind.com-search-icon-png-545056.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="tblMembers_Member" layoutX="683.0" layoutY="112.0" prefHeight="628.0" prefWidth="1203.0" style="-fx-background-color: #c4c4c4;">
+                          <columns>
+                            <TableColumn fx:id="colId_member" prefWidth="116.0" text="Id" />
+                            <TableColumn fx:id="colName_Member" prefWidth="252.0" text="Name" />
+                              <TableColumn fx:id="colAge_Member" minWidth="4.0" prefWidth="61.0" text="Age" />
+                              <TableColumn fx:id="colAddress_Member" minWidth="0.0" prefWidth="248.0" text="Address" />
+                              <TableColumn fx:id="colContact_Member" minWidth="9.0" prefWidth="171.0" text="Contact" />
+                              <TableColumn fx:id="colEmail_Member" prefWidth="227.0" text="Email" />
+                              <TableColumn fx:id="colDateOfMembership_Member" prefWidth="108.0" text="Date" />
+                          </columns>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TableView>
+                        <Separator layoutX="649.0" layoutY="19.0" orientation="VERTICAL" prefHeight="759.0" prefWidth="6.0" />
+                        <Label layoutX="22.0" layoutY="26.0" text="MEMBER DETAILS">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="484.0" layoutY="31.0" text="ID :">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblId_Member" layoutX="543.0" layoutY="32.0" prefHeight="8.0" prefWidth="81.0" text="M-0001">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="btnRegisterOrUpdate" disable="true" layoutX="439.0" layoutY="702.0" onAction="#RegisterOrUpdateOnAction" prefHeight="39.0" prefWidth="139.0" style="-fx-background-color: #27ae60;" text="Register" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="btnDelete_Member" disable="true" layoutX="290.0" layoutY="702.0" onAction="#cancelMembershipOnAction" prefHeight="39.0" prefWidth="139.0" style="-fx-background-color: c90d0d;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="48.0" layoutY="125.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="259.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="38.0" layoutY="331.0" text="Contact No">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName_Member" layoutX="210.0" layoutY="122.0" prefHeight="31.0" prefWidth="414.0" />
+                        <TextField fx:id="txtAddress_Member" layoutX="210.0" layoutY="256.0" prefHeight="31.0" prefWidth="414.0" />
+                        <TextField fx:id="txtContactNo_Member" layoutX="210.0" layoutY="328.0" prefHeight="31.0" prefWidth="414.0" />
+                        <Label layoutX="38.0" layoutY="398.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail_Member" layoutX="210.0" layoutY="395.0" prefHeight="31.0" prefWidth="414.0" />
+                        <Label layoutX="44.0" layoutY="195.0" text="Age">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAge_Member" layoutX="207.0" layoutY="192.0" prefHeight="31.0" prefWidth="414.0" />
+                        <Label layoutX="39.0" layoutY="472.0" text="Membership Date">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDateOfMemberShip_Member" editable="false" layoutX="210.0" layoutY="469.0" prefHeight="31.0" prefWidth="414.0" />
+                        <JFXCheckBox fx:id="chkBoxRegistrationFee_Member" layoutX="439.0" layoutY="548.0" text="Registration Fee Paid">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXCheckBox>
+                        <Accordion layoutX="148.0" layoutY="42.0" />
+                        <JFXButton layoutX="141.0" layoutY="702.0" onAction="#clearOnAction_Member" prefHeight="39.0" prefWidth="139.0" style="-fx-background-color: #57606f;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <JFXButton fx:id="btnPrint" buttonType="RAISED" disable="true" layoutX="588.0" layoutY="702.0" onAction="#printLibraryCardOnAction" prefHeight="39.0" prefWidth="42.0" style="-fx-background-color: #40739e;" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="1.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <ImageView fx:id="imgPrint_Member" disable="true" fitHeight="25.0" fitWidth="30.0" layoutX="597.0" layoutY="709.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/clipart2867726.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="tbIssueRenewBook" style="-fx-background-color: #57606f;" text="ISSUE / RENEW BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1606.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TableView fx:id="tblBorrowedBooks_Issue" layoutX="1049.0" layoutY="481.0" prefHeight="245.0" prefWidth="821.0">
+                          <columns>
+                            <TableColumn fx:id="colBookId_Issue" prefWidth="100.0" text="Book Id" />
+                            <TableColumn fx:id="colBookName_Issue" prefWidth="248.0" text="Book Name" />
+                              <TableColumn fx:id="colAuthor_Issue" prefWidth="223.0" text="Author" />
+                              <TableColumn fx:id="colBorrowedDate_Issue" prefWidth="133.0" text="Borrrowed Date" />
+                              <TableColumn fx:id="colDueDate_Issue" prefWidth="116.0" text="Due date" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="1413.0" layoutY="-232.0" text="Issue / Renew Books">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDateOfMembership_Issue" editable="false" layoutX="1228.0" layoutY="320.0" prefHeight="31.0" prefWidth="642.0" />
+                        <Label layoutX="1049.0" layoutY="325.0" text="Date of Membership">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="548.0" text="Book Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="609.0" text="Author">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="57.0" layoutY="672.0" text="Status">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1049.0" layoutY="110.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName_Issue" editable="false" layoutX="1228.0" layoutY="104.0" prefHeight="31.0" prefWidth="642.0" />
+                        <Label layoutX="1049.0" layoutY="164.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAddress_Issue" editable="false" layoutX="1228.0" layoutY="159.0" prefHeight="31.0" prefWidth="642.0" />
+                        <Label layoutX="1049.0" layoutY="221.0" text="Contact">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtContact_Issue" editable="false" layoutX="1228.0" layoutY="216.0" prefHeight="31.0" prefWidth="426.0" />
+                        <Label layoutX="1690.0" layoutY="221.0" text="Age">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAge_Issue" editable="false" layoutX="1741.0" layoutY="216.0" prefHeight="31.0" prefWidth="128.0" />
+                        <Label layoutX="1049.0" layoutY="271.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail_Issue" editable="false" layoutX="1228.0" layoutY="266.0" prefHeight="31.0" prefWidth="642.0" />
+                        <Label layoutX="62.0" layoutY="203.0" text="Borrow Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="253.0" text="Due Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="chkBoxRefOnly_Issue" checkedColor="#10779c" disable="true" layoutX="763.0" layoutY="670.0" text="Referrence Only">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <TextField fx:id="txtDueDate_Issue" editable="false" layoutX="199.0" layoutY="255.0" prefHeight="31.0" prefWidth="714.0" />
+                        <TextField fx:id="txtBorrowedDate_Issue" editable="false" layoutX="202.0" layoutY="205.0" prefHeight="31.0" prefWidth="711.0" />
+                        <JFXButton fx:id="btnIssueOrRenew" disable="true" layoutX="770.0" layoutY="315.0" onAction="#IssueOrRenewBookOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #40739e;" text="Issue" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="620.0" layoutY="315.0" onAction="#cancel_IssueOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #57606f;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Separator layoutX="960.0" layoutY="15.0" orientation="VERTICAL" prefHeight="758.0" prefWidth="29.0" />
+                        <Label layoutX="50.0" layoutY="394.0" prefHeight="54.0" prefWidth="207.0" text="BOOK DETAILS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtStatus_Issue" editable="false" layoutX="193.0" layoutY="667.0" prefHeight="31.0" prefWidth="496.0" />
+                        <TextField fx:id="txtAuthor_Issue" editable="false" layoutX="196.0" layoutY="604.0" prefHeight="31.0" prefWidth="715.0" />
+                        <TextField fx:id="txtBookName_Issue" editable="false" layoutX="197.0" layoutY="543.0" prefHeight="31.0" prefWidth="714.0" />
+                        <TextField fx:id="txtBookId_Issue" focusTraversable="false" layoutX="202.0" layoutY="148.0" prefHeight="31.0" prefWidth="711.0">
+                           <effect>
+                              <Glow />
+                           </effect></TextField>
+                        <Label layoutX="62.0" layoutY="146.0" prefHeight="21.0" prefWidth="69.0" text="Book Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="62.0" layoutY="92.0" text="Member Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMemberId_Issue" focusTraversable="false" layoutX="201.0" layoutY="94.0" prefHeight="31.0" prefWidth="711.0">
+                           <effect>
+                              <Glow />
+                           </effect></TextField>
+                        <Label layoutX="57.0" layoutY="486.0" text="ISBN">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtISBN_Issue" editable="false" layoutX="195.0" layoutY="481.0" prefHeight="31.0" prefWidth="716.0" />
+                        <Label layoutX="1050.0" layoutY="21.0" prefHeight="54.0" prefWidth="242.0" text="MEMBER DETAILS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="21.0" prefHeight="54.0" prefWidth="207.0" text="ISSUE BOOK">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1041.0" layoutY="388.0" prefHeight="54.0" prefWidth="275.0" text="BORROWED BOOKS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <RequiredFieldValidator layoutX="257.0" layoutY="351.0" message="sgaghsg" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tbReturnBook" style="-fx-background-color: #40739e;" text="RETURN BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1299.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="50.0" layoutY="31.0" text="Enter Member Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMemberId_ReturnBook" layoutX="211.0" layoutY="26.0" prefHeight="31.0" prefWidth="193.0" />
+                        <TableView fx:id="tblBorrowedBooks_ReturnBook" layoutX="50.0" layoutY="146.0" prefHeight="216.0" prefWidth="982.0">
+                           <columns>
+                              <TableColumn fx:id="colBookId_ReturnBook" prefWidth="100.0" text="Book Id" />
+                              <TableColumn fx:id="colBookName_ReturnBook" prefWidth="263.0" text="Book Name" />
+                              <TableColumn fx:id="colAuthor_returnBook" prefWidth="298.0" text="Author" />
+                              <TableColumn fx:id="colBorrowedDate_ReturnBook" prefWidth="167.0" text="Borrrowed Date" />
+                              <TableColumn fx:id="colDueDate_ReturnBook" prefWidth="153.0" text="Due Date" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="1413.0" layoutY="-232.0" text="Issue / Renew Books">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDateOfMembership_ReturnBook" editable="false" layoutX="245.0" layoutY="696.0" prefHeight="31.0" prefWidth="790.0" />
+                        <Label layoutX="55.0" layoutY="701.0" text="Date Of Membership">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1128.0" layoutY="95.0" prefHeight="21.0" prefWidth="69.0" text="ISBN">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1128.0" layoutY="143.0" text="Book Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtISBN_ReturnBook" editable="false" layoutX="1294.0" layoutY="84.0" prefHeight="31.0" prefWidth="566.0" />
+                        <Label layoutX="1128.0" layoutY="193.0" text="Author">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1128.0" layoutY="243.0" text="Status">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="55.0" layoutY="472.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName_ReturnBook" editable="false" layoutX="245.0" layoutY="467.0" prefHeight="31.0" prefWidth="785.0" />
+                        <Label layoutX="55.0" layoutY="532.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAddress_ReturnBook" editable="false" layoutX="245.0" layoutY="527.0" prefHeight="31.0" prefWidth="786.0" />
+                        <Label layoutX="55.0" layoutY="591.0" text="Contact">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtContact_ReturnBook" editable="false" layoutX="245.0" layoutY="586.0" prefHeight="31.0" prefWidth="461.0" />
+                        <Label layoutX="749.0" layoutY="591.0" text="Age">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAge_ReturnBook" editable="false" layoutX="795.0" layoutY="586.0" prefHeight="31.0" prefWidth="237.0" />
+                        <Label layoutX="55.0" layoutY="642.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail_ReturnBook" editable="false" layoutX="245.0" layoutY="637.0" prefHeight="31.0" prefWidth="790.0" />
+                        <Label layoutX="1128.0" layoutY="413.0" text="Borrow Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1128.0" layoutY="467.0" text="Due Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDueDate_ReturnBook" editable="false" layoutX="1294.0" layoutY="464.0" prefHeight="31.0" prefWidth="566.0" />
+                        <TextField fx:id="txtBorrowDate_ReturnBook" editable="false" layoutX="1294.0" layoutY="410.0" prefHeight="31.0" prefWidth="566.0" />
+                        <JFXButton fx:id="btnReturn_Return" disable="true" layoutX="1725.0" layoutY="685.0" onAction="#returnBookOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #40739e;" text="Return" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Separator layoutX="1071.0" layoutY="14.0" orientation="VERTICAL" prefHeight="736.0" prefWidth="17.0" />
+                        <Label layoutX="1118.0" layoutY="14.0" prefHeight="54.0" prefWidth="193.0" text="BOOK DETAILS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtStatus_ReturnBook" editable="false" layoutX="1294.0" layoutY="232.0" prefHeight="31.0" prefWidth="270.0" />
+                        <TextField fx:id="txtAuthor_ReturnBook" editable="false" layoutX="1294.0" layoutY="182.0" prefHeight="31.0" prefWidth="566.0" />
+                        <TextField fx:id="txtBookName_ReturnBook" editable="false" layoutX="1294.0" layoutY="131.0" prefHeight="31.0" prefWidth="566.0" />
+                        <Label layoutX="1128.0" layoutY="578.0" text="Fines">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtOverDueFine_returnBook" editable="false" layoutX="1315.0" layoutY="597.0" prefHeight="31.0" prefWidth="114.0" />
+                        <JFXCheckBox fx:id="chkBoxOverDue_ReturnBook" disable="true" layoutX="1294.0" layoutY="572.0" text="Overdue" />
+                        <Label layoutX="1128.0" layoutY="523.0" text="Returned Date">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtReturnDate_ReturnBook" editable="false" layoutX="1294.0" layoutY="520.0" prefHeight="31.0" prefWidth="566.0" />
+                        <Label layoutX="1599.0" layoutY="365.0" prefHeight="21.0" prefWidth="69.0" text="Book Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtBookIdReturnBook_ReturnBook" editable="false" layoutX="1688.0" layoutY="360.0" prefHeight="31.0" prefWidth="171.0" />
+                        <Label layoutX="1128.0" layoutY="371.0" text="Member Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMemberIdReturnBook_ReturnBook" editable="false" layoutX="1294.0" layoutY="360.0" prefHeight="31.0" prefWidth="270.0" />
+                        <JFXButton layoutX="1575.0" layoutY="685.0" onAction="#cancelOnAction_Return" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #57606f;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="1122.0" layoutY="298.0" prefHeight="54.0" prefWidth="193.0" text="RETURN BOOK">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="386.0" prefHeight="54.0" prefWidth="245.0" text="MEMBER DETAILS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1294.0" layoutY="603.0" text="Rs.">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtLostFine_returnBook" editable="false" layoutX="1554.0" layoutY="597.0" prefHeight="31.0" prefWidth="114.0" />
+                        <TextField fx:id="txtDamagedFine_returnBook" editable="false" layoutX="1745.0" layoutY="597.0" prefHeight="31.0" prefWidth="114.0" />
+                        <Label layoutX="1531.0" layoutY="602.0" text="Rs.">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1718.0" layoutY="602.0" text="Rs.">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="1600.0" layoutY="237.0" text="Price(Rs.)">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtPrice_ReturnBook" editable="false" layoutX="1688.0" layoutY="232.0" prefHeight="31.0" prefWidth="174.0" />
+                        <Label layoutX="50.0" layoutY="73.0" prefHeight="54.0" prefWidth="266.0" text="BORROWED BOOKS">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                        <JFXRadioButton fx:id="rdBtnLost_ReturnBook" disable="true" layoutX="1531.0" layoutY="570.0" text="Lost" />
+                        <JFXRadioButton fx:id="rdBtnDamaged_ReturnBook" disable="true" layoutX="1718.0" layoutY="567.0" text="Damaged" />
+                        <Separator layoutX="1460.0" layoutY="569.0" orientation="VERTICAL" prefHeight="71.0" prefWidth="13.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tbReserveBook" text="RESERVE BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1385.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label layoutX="50.0" layoutY="90.0" text="Member Id">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMemberId_Reserve" layoutX="203.0" layoutY="85.0" prefHeight="31.0" prefWidth="492.0" />
+                        <TableView fx:id="tblReservations" layoutX="793.0" layoutY="87.0" prefHeight="653.0" prefWidth="1086.0" style="-fx-background-color: #c4c4c4;">
+                           <columns>
+                              <TableColumn fx:id="colISBN_reserve" prefWidth="232.0" text="ISBN" />
+                              <TableColumn fx:id="colMemberId_Reserve" prefWidth="206.0" text="Member Id" />
+                              <TableColumn fx:id="colReservationDate_Reserve" prefWidth="289.0" text="Reservation Date" />
+                              <TableColumn fx:id="colStatus_Reserve" prefWidth="167.0" text="Status" />
+                              <TableColumn fx:id="colAvailableTill_Reserve" prefWidth="172.0" text="Available Till" />
+                           </columns>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TableView>
+                        <Label layoutX="1413.0" layoutY="-232.0" text="Issue / Renew Books">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="48.0" layoutY="145.0" prefHeight="21.0" prefWidth="42.0" text="ISBN">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="628.0" text="Book Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtISBN_ReserveBook" editable="false" layoutX="203.0" layoutY="140.0" prefHeight="31.0" prefWidth="492.0" />
+                        <Label layoutX="50.0" layoutY="674.0" text="Author">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="718.0" text="Status">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="392.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName_Reserve" editable="false" layoutX="203.0" layoutY="387.0" prefHeight="31.0" prefWidth="492.0" />
+                        <Label layoutX="50.0" layoutY="436.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtAddress_Reserve" editable="false" layoutX="203.0" layoutY="430.0" prefHeight="31.0" prefWidth="492.0" />
+                        <Label layoutX="50.0" layoutY="476.0" text="Contact">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtContact_Reserve" editable="false" layoutX="203.0" layoutY="470.0" prefHeight="31.0" prefWidth="492.0" />
+                        <Label layoutX="50.0" layoutY="519.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtEmail_Reserve" editable="false" layoutX="203.0" layoutY="513.0" prefHeight="31.0" prefWidth="492.0" />
+                        <Label layoutX="50.0" layoutY="201.0" text="Date ">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtDate_ReserveBook" layoutX="203.0" layoutY="196.0" prefHeight="31.0" prefWidth="492.0" />
+                        <JFXButton fx:id="btnReserve_reserve" disable="true" layoutX="552.0" layoutY="265.0" onAction="#reserveBookOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #22a6b3;" text="Reserve" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Separator layoutX="738.0" layoutY="17.0" orientation="VERTICAL" prefHeight="751.0" prefWidth="18.0" />
+                        <Label layoutX="45.0" layoutY="567.0" prefHeight="35.0" prefWidth="181.0" text="BOOK DETAILS">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtStatus_Reserve" editable="false" layoutX="203.0" layoutY="713.0" prefHeight="31.0" prefWidth="274.0" />
+                        <TextField fx:id="txtAuthor_Reserve" editable="false" layoutX="203.0" layoutY="669.0" prefHeight="31.0" prefWidth="492.0" />
+                        <TextField fx:id="txtBookName_Reserve" editable="false" layoutX="203.0" layoutY="623.0" prefHeight="31.0" prefWidth="492.0" />
+                        <JFXButton fx:id="btnDeleteReserve" disable="true" layoutX="403.0" layoutY="265.0" onAction="#cancelReservationOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: c90d0d;" text="Delete" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXRadioButton fx:id="rdBtnAll_Reserve" layoutX="1606.0" layoutY="39.0" text="All">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rdBtnAvailable_reserve" layoutX="1677.0" layoutY="39.0" text="Available">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rdBtnPending_Reserve" layoutX="1786.0" layoutY="39.0" text="Pending">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <Label layoutX="45.0" layoutY="345.0" prefHeight="36.0" prefWidth="223.0" text="MEMBER DETAILS">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="45.0" layoutY="18.0" prefHeight="40.0" prefWidth="209.0" text="RESERVE BOOK">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMemberIdSearch_Reserve" layoutX="902.0" layoutY="33.0" prefHeight="31.0" prefWidth="260.0" promptText="Member Id" />
+                        <Label layoutX="793.0" layoutY="31.0" prefHeight="34.0" prefWidth="97.0" text="SEARCH">
+                           <font>
+                              <Font name="System Bold" size="23.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="chkBoxRefOnly_Reserve" disable="true" layoutX="537.0" layoutY="718.0" text="Reference Only">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXButton layoutX="254.0" layoutY="265.0" onAction="#clearReservationOnAction" prefHeight="42.0" prefWidth="143.0" style="-fx-background-color: #57606f;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton layoutX="661.0" layoutY="141.0" onAction="#openLookUpOnAction" prefHeight="29.0" prefWidth="34.0" style="-fx-background-color: #40739e;" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="1.0" />
+                           </font>
+                        </JFXButton>
+                        <ImageView disable="true" fitHeight="23.0" fitWidth="19.0" layoutX="669.0" layoutY="146.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/pngfind.com-search-icon-png-545056.png" />
+                           </image>
+                        </ImageView>
+                        <AnchorPane fx:id="lookupFormContext_Reserve" layoutX="507.0" layoutY="117.0" prefHeight="574.0" prefWidth="752.0" style="-fx-background-color: #273c75;" visible="false">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="504.0" layoutX="20.0" layoutY="56.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="718.0" />
+                              <TableView fx:id="tblISBNTitle_Reserve" layoutX="50.0" layoutY="132.0" prefHeight="405.0" prefWidth="659.0">
+                                <columns>
+                                  <TableColumn fx:id="colISBNSearch_Reserve" prefWidth="234.0" text="ISBN" />
+                                  <TableColumn fx:id="colTitleSearch_reserve" prefWidth="424.0" text="TITLE" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="txtTitleSearch_Reserve" layoutX="156.0" layoutY="85.0" prefHeight="31.0" prefWidth="553.0" promptText="Title" />
+                              <Label layoutX="50.0" layoutY="84.0" prefHeight="34.0" prefWidth="97.0" text="SEARCH">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                              </Label>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bcbcbc" height="35.0" layoutX="39.0" layoutY="-3.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="718.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#273c75" height="35.0" layoutY="-3.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="43.0" />
+                              <ImageView disable="true" fitHeight="26.0" fitWidth="27.0" layoutX="8.0" layoutY="2.0" onMouseClicked="#closeLookUpOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assests/pngfind.com-search-icon-png-545056.png" />
+                                 </image>
+                              </ImageView>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0b0b" height="35.0" layoutX="717.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="43.0" />
+                              <ImageView fitHeight="18.0" fitWidth="17.0" layoutX="730.0" layoutY="7.0" onMouseClicked="#closeLookUpOnMouseClick" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../assests/clipart1087676.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <ImageView fitHeight="49.0" fitWidth="67.0" layoutX="565.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/clipart605620.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="674.0" layoutY="19.0" prefHeight="54.0" prefWidth="681.0" text="NENA PIYASA PUBLIC LIBRARY">
+         <font>
+            <Font name="Baskerville Old Face" size="45.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="1686.0" layoutY="43.0" prefHeight="59.0" prefWidth="233.0" text="08:15 AM">
+         <font>
+            <Font name="Arial Bold" size="51.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="1768.0" layoutY="1.0" prefHeight="45.0" prefWidth="151.0" text="2021-03-10">
+         <font>
+            <Font name="Arial Bold" size="28.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnLogOut" layoutY="-2.0" onAction="#logOutOnAction" prefHeight="104.0" prefWidth="72.0" style="-fx-background-color: #000000;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <ImageView disable="true" fitHeight="54.0" fitWidth="59.0" layoutX="9.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assests/logout.png" />
+         </image>
+      </ImageView>
+      <JFXBadge layoutX="320.0" layoutY="24.0" prefHeight="35.0" prefWidth="51.0" />
+   </children>
+</AnchorPane>

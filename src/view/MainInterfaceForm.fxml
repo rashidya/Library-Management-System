@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainInterfaceContext" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="997.0" prefWidth="1919.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainInterfaceFormController">
+   <bottom>
+      <AnchorPane prefHeight="50.0" prefWidth="1318.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <JFXTabPane focusTraversable="false" style="-fx-background-color: #ffffff;" tabMinHeight="60.0" tabMinWidth="355.0" BorderPane.alignment="CENTER">
+         <tabs>
+            <Tab fx:id="tbHome" style="-fx-background-color: #576574;" styleClass="#576574" text="HOME">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView disable="true" fitHeight="1010.0" fitWidth="1642.0" layoutX="-34.0" layoutY="-8.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/Old_Books_Wallpaper.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="341.0" layoutY="334.0" prefHeight="219.0" prefWidth="749.0" text="WELCOME" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="150.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tbSearchBooks" style="-fx-background-color: #40739e;" text="SEARCH BOOK">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtAuthorSearch" layoutX="810.0" layoutY="28.0" prefHeight="31.0" prefWidth="516.0" promptText="Author" />
+                        <TextField fx:id="txtBookNameSearch" layoutX="218.0" layoutY="28.0" prefHeight="31.0" prefWidth="594.0" promptText="Book Name" />
+                        <Label alignment="CENTER" layoutX="95.0" layoutY="20.0" prefHeight="45.0" prefWidth="118.0" text="SEARCH">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblBooks" layoutX="91.0" layoutY="249.0" prefHeight="602.0" prefWidth="1238.0">
+                           <columns>
+                              <TableColumn fx:id="colISBN" prefWidth="221.0" text="ISBN" />
+                              <TableColumn fx:id="colBookName" prefWidth="397.0" text="Book Name" />
+                              <TableColumn fx:id="colAuthor" prefWidth="359.0" text="Author" />
+                              <TableColumn fx:id="colAvailability" prefWidth="163.0" text="Availability" />
+                              <TableColumn fx:id="colRackNo" prefWidth="97.0" text="Rack No" />
+                           </columns>
+                        </TableView>
+                        <JFXCheckBox fx:id="chkBoxCategory1" layoutX="100.0" layoutY="128.0" text="Action and Adventure" />
+                        <JFXCheckBox fx:id="chkBoxCategory7" layoutX="330.0" layoutY="178.0" text="Detective and Mystery" />
+                        <JFXCheckBox fx:id="chkBoxCategory6" layoutX="330.0" layoutY="153.0" text="Cooking,Health and Fitness " />
+                        <JFXCheckBox fx:id="chkBoxCategory5" layoutX="330.0" layoutY="128.0" text="Comic " />
+                        <JFXCheckBox fx:id="chkBoxCategory4" layoutX="100.0" layoutY="203.0" text="Classic" />
+                        <JFXCheckBox fx:id="chkBoxCategory2" layoutX="100.0" layoutY="153.0" text="Biograpies and Memoir" />
+                        <JFXCheckBox fx:id="chkBoxCategory8" layoutX="331.0" layoutY="203.0" text="Horror" />
+                        <JFXCheckBox fx:id="chkBoxCategory12" layoutX="620.0" layoutY="203.0" text="Religion" />
+                        <JFXCheckBox fx:id="chkBoxCategory11" layoutX="620.0" layoutY="178.0" text="Reference" />
+                        <JFXCheckBox fx:id="chkBoxCategory9" layoutX="620.0" layoutY="128.0" text="Literary Fiction" />
+                        <JFXCheckBox fx:id="chkBoxCategory14" layoutX="830.0" layoutY="153.0" text="Science Fiction " />
+                        <JFXCheckBox fx:id="chkBoxCategory13" layoutX="830.0" layoutY="128.0" text="Romance" />
+                        <JFXCheckBox fx:id="chkBoxCategory16" layoutX="830.0" layoutY="203.0" text="True Crime" />
+                        <JFXCheckBox fx:id="chkBoxCategory15" layoutX="830.0" layoutY="178.0" text="Short Stories" />
+                        <JFXCheckBox fx:id="chkBoxCategory3" layoutX="100.0" layoutY="178.0" text="Children's" />
+                        <JFXCheckBox fx:id="chkBoxCategory17" layoutX="1020.0" layoutY="128.0" text="Other" />
+                        <JFXCheckBox fx:id="chkBoxCategory10" layoutX="620.0" layoutY="153.0" text="Poetry" />
+                        <Separator layoutX="1183.0" layoutY="129.0" orientation="VERTICAL" prefHeight="89.0" prefWidth="10.0" />
+                        <Label alignment="CENTER" layoutX="94.0" layoutY="88.0" prefHeight="18.0" prefWidth="101.0" style="-fx-background-color: #000000;" text="Category" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXCheckBox fx:id="chkBoxAvailable" layoutX="1218.0" layoutY="132.0" text="Available">
+                           <font>
+                              <Font name="System Bold" size="19.0" />
+                           </font>
+                        </JFXCheckBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tbMembershipAccount" style="-fx-background-color: #95afc0;" text="MEMBER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="823.0" layoutX="23.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="540.0" />
+                        <Label layoutX="639.0" layoutY="55.0" prefHeight="35.0" prefWidth="221.0" text="MEMBER ID">
+                           <font>
+                              <Font name="System Bold" size="22.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtMembershipId" layoutX="884.0" layoutY="57.0" prefHeight="31.0" prefWidth="304.0" />
+                        <JFXButton layoutX="1173.0" layoutY="57.0" onAction="#viewAccountOnAction" prefHeight="31.0" prefWidth="41.0" style="-fx-background-color: #000000;" styleClass="#576574" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="1.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Label layoutX="640.0" layoutY="151.0" prefHeight="38.0" prefWidth="168.0" text="Name">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="640.0" layoutY="216.0" prefHeight="45.0" prefWidth="168.0" text="Age">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="640.0" layoutY="292.0" prefHeight="30.0" prefWidth="168.0" text="Address">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="640.0" layoutY="360.0" prefHeight="30.0" prefWidth="168.0" text="Contact No">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="640.0" layoutY="428.0" prefHeight="30.0" prefWidth="168.0" text="Email">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="640.0" layoutY="505.0" prefHeight="30.0" prefWidth="198.0" text="Date of Membership">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="156.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="220.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="293.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="356.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="429.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="845.0" layoutY="501.0" prefHeight="38.0" prefWidth="14.0" text=":">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtName" editable="false" layoutX="884.0" layoutY="155.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="txtAge" editable="false" layoutX="884.0" layoutY="223.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="txtAddress" editable="false" layoutX="884.0" layoutY="292.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="txtContactNo" editable="false" layoutX="884.0" layoutY="359.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="txtEmail" editable="false" layoutX="884.0" layoutY="427.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <TextField fx:id="txtDateOfMembership" editable="false" layoutX="884.0" layoutY="505.0" prefHeight="31.0" prefWidth="507.0">
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </TextField>
+                        <Label fx:id="lblInvalidId" layoutX="884.0" layoutY="96.0" prefHeight="28.0" prefWidth="178.0" text="*  No member found" textFill="RED" visible="false">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tblBorrowedBooks" layoutX="640.0" layoutY="653.0" prefHeight="199.0" prefWidth="751.0">
+                          <columns>
+                            <TableColumn fx:id="colBookId" prefWidth="112.0" text="Book Id" />
+                            <TableColumn fx:id="colTitle" prefWidth="228.0" text="Title" />
+                              <TableColumn fx:id="colBorrowedDate" prefWidth="148.0" text="Borrowed Date" />
+                              <TableColumn fx:id="colDueDate" prefWidth="148.0" text="Due Date" />
+                              <TableColumn fx:id="colOverDueFine" prefWidth="114.0" text="Overdue Fine" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="53.0" layoutY="56.0" prefHeight="40.0" prefWidth="362.0" text="RULES AND REGULATIONS">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="53.0" layoutY="190.0" prefHeight="38.0" prefWidth="419.0" text="* Members are allowed to borrow maximum of ">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMaxNoOfBooksBorrowed" layoutX="479.0" layoutY="189.0" prefHeight="38.0" prefWidth="23.0" text="12">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="67.0" layoutY="227.0" prefHeight="38.0" prefWidth="150.0" text="books at a time.">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="279.0" prefHeight="38.0" prefWidth="481.0" text="*  Borrowed books are allowed to keep for maximum  ">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="69.0" layoutY="308.0" prefHeight="38.0" prefWidth="18.0" text="of">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMaxNoOfDaysBorrowedBookCanBeKept" layoutX="105.0" layoutY="308.0" prefHeight="38.0" prefWidth="28.0" text="15">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="144.0" layoutY="308.0" prefHeight="38.0" prefWidth="52.0" text="days.">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="66.0" layoutY="346.0" prefHeight="24.0" prefWidth="364.0" text="( Overdue fines will be charged on each extra day)">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="387.0" prefHeight="38.0" prefWidth="365.0" text="*  A borrowed book can be renewed only">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblNoOfTimesABookCanBeRenewed" layoutX="416.0" layoutY="387.0" prefHeight="38.0" prefWidth="28.0" text="1">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="441.0" layoutY="387.0" prefHeight="38.0" prefWidth="63.0" text="times.">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="451.0" prefHeight="38.0" prefWidth="481.0" text="*  Renewed books are allowed to keep for maximum  ">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="69.0" layoutY="489.0" prefHeight="38.0" prefWidth="18.0" text="of">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblMaxNoOfDaysRenewedBookCanBeKept" layoutX="105.0" layoutY="489.0" prefHeight="38.0" prefWidth="28.0" text="15">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="144.0" layoutY="489.0" prefHeight="38.0" prefWidth="52.0" text="days.">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="66.0" layoutY="527.0" prefHeight="24.0" prefWidth="364.0" text="( Overdue fines will be charged on each extra day)">
+                           <font>
+                              <Font name="Arial" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="576.0" prefHeight="38.0" prefWidth="328.0" text="*Reservations are available only for">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="634.0" prefHeight="38.0" prefWidth="55.0" text="* Fine">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="674.0" prefHeight="38.0" prefWidth="133.0" text="Overdue Fines">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="248.0" layoutY="674.0" prefHeight="38.0" prefWidth="7.0" text=":">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="282.0" layoutY="674.0" prefHeight="38.0" prefWidth="33.0" text="Rs.">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblOverdueFine" layoutX="327.0" layoutY="674.0" prefHeight="38.0" prefWidth="33.0" text="20">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="364.0" layoutY="681.0" prefHeight="25.0" prefWidth="78.0" text="per day">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="78.0" layoutY="712.0" prefHeight="38.0" prefWidth="133.0" text="Book Lost">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="248.0" layoutY="712.0" prefHeight="38.0" prefWidth="7.0" text=":">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblLostFine" layoutX="282.0" layoutY="712.0" prefHeight="38.0" prefWidth="45.0" text="120">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="327.0" layoutY="712.0" prefHeight="38.0" prefWidth="33.0" text="\%">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="364.0" layoutY="719.0" prefHeight="25.0" prefWidth="176.0" text="of price of the book">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="83.0" layoutY="750.0" prefHeight="38.0" prefWidth="147.0" text="Book Damaged">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="248.0" layoutY="750.0" prefHeight="38.0" prefWidth="7.0" text=":">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblDamagedFine" layoutX="283.0" layoutY="750.0" prefHeight="38.0" prefWidth="43.0" text="100">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="591.0" layoutY="20.0" orientation="VERTICAL" prefHeight="844.0" prefWidth="22.0" />
+                        <Label layoutX="53.0" layoutY="133.0" prefHeight="38.0" prefWidth="180.0" text="* Registration fee - ">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="246.0" layoutY="133.0" prefHeight="38.0" prefWidth="33.0" text="Rs.">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblRegistrationFee" layoutX="299.0" layoutY="133.0" prefHeight="38.0" prefWidth="58.0" text="20">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="327.0" layoutY="750.0" prefHeight="38.0" prefWidth="33.0" text="\%">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="364.0" layoutY="757.0" prefHeight="25.0" prefWidth="176.0" text="of price of the book">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView disable="true" fitHeight="23.0" fitWidth="26.0" layoutX="1181.0" layoutY="62.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/NicePng_white-arrow-png_97633.png" />
+                           </image>
+                        </ImageView>
+                        <JFXButton layoutX="1273.0" layoutY="57.0" onAction="#clearMemberOnAction_Member" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #576574;" styleClass="#576574" text="Cancel" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Separator layoutX="639.0" layoutY="594.0" prefHeight="21.0" prefWidth="750.0" />
+                        <Label fx:id="lblMaxNoOfDaysAReservationIsAvailable_member" layoutX="376.0" layoutY="573.0" prefHeight="38.0" prefWidth="28.0" text="15">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="415.0" layoutY="573.0" prefHeight="38.0" prefWidth="52.0" text="days.">
+                           <font>
+                              <Font name="Arial" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tbLibraryMap" text="LIBRARY MAP">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <ImageView fitHeight="701.0" fitWidth="1158.0" layoutX="245.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/map.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="591.0" layoutY="813.0" prefHeight="38.0" prefWidth="249.0" text="- NENA PIYASA PUBLIC LIBRARY -">
+                           <font>
+                              <Font name="Baskerville Old Face" size="15.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="39.0" fitWidth="55.0" layoutX="692.0" layoutY="761.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assests/clipart605620.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </JFXTabPane>
+   </center>
+   <left>
+      <AnchorPane fx:id="loginFormContext" prefHeight="947.0" prefWidth="489.0" style="-fx-background-color: #c4c4c4;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="80.0" layoutY="121.0" text="NENA PIYASA">
+               <font>
+                  <Font name="Baskerville Old Face" size="50.0" />
+               </font>
+            </Label>
+            <Label layoutX="45.0" layoutY="172.0" text="PUBLIC LIBRARY">
+               <font>
+                  <Font name="Baskerville Old Face" size="50.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="71.0" layoutY="361.0" prefHeight="113.0" prefWidth="358.0" text="09:01 AM">
+               <font>
+                  <Font name="System Bold" size="78.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="135.0" layoutY="457.0" prefHeight="107.0" prefWidth="239.0" text="2020-03-10">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font>
+            </Label>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c4c4c4" height="232.0" layoutX="54.0" layoutY="612.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="390.0" />
+            <TextField fx:id="txtUserName" focusTraversable="false" layoutX="81.0" layoutY="736.0" prefHeight="31.0" prefWidth="268.0" promptText="User Name" style="-fx-background-color: #ffffff;" />
+            <PasswordField fx:id="txtPassword" focusTraversable="false" layoutX="81.0" layoutY="774.0" prefHeight="31.0" prefWidth="268.0" promptText="Password" style="-fx-background-color: #ffffff;" />
+            <JFXButton fx:id="btnLogin" contentDisplay="CENTER" layoutX="355.0" layoutY="613.0" onAction="#logInOnAction" prefHeight="231.0" prefWidth="90.0" ripplerFill="#eeeeee" style="-fx-background-color: #000000;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="49.0" fitWidth="65.0" layoutX="220.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/clipart605620.png" />
+               </image>
+            </ImageView>
+            <Circle fill="#c4c4c4" layoutX="215.0" layoutY="677.0" radius="49.0" stroke="#838282" strokeType="INSIDE" strokeWidth="3.0" />
+            <ImageView fitHeight="85.0" fitWidth="94.0" layoutX="168.0" layoutY="628.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/User-Profile-PNG-Clipart.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="lblWarning" alignment="CENTER" layoutX="90.0" layoutY="816.0" prefHeight="21.0" prefWidth="250.0" text="* STAFF ONLY" textFill="#ab1a1a" />
+            <ImageView disable="true" fitHeight="121.0" fitWidth="71.0" layoutX="365.0" layoutY="690.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/login-512.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="txtPasswordText" focusTraversable="false" layoutX="81.0" layoutY="774.0" prefHeight="31.0" prefWidth="268.0" visible="false" />
+            <ImageView fx:id="imageShowPassword" fitHeight="25.0" fitWidth="22.0" layoutX="311.0" layoutY="779.0" onMouseClicked="#VisiblePassword" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assests/show-password-256.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageHidePassword" fitHeight="21.0" fitWidth="22.0" layoutX="311.0" layoutY="780.0" onMouseClicked="#HidePassword" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../assests/closedEye.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>
